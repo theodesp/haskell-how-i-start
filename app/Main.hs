@@ -3,4 +3,6 @@ module Main where
 import Lib
 
 main :: IO ()
-main = someFunc
+main = do
+  summed <- getAtBatsSum "batting.csv"
+  putStrLn $ "Total atBats was: " ++ (show summed)

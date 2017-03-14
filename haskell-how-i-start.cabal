@@ -1,13 +1,13 @@
 name:                haskell-how-i-start
 version:             0.1.0.0
--- synopsis:
--- description:
-homepage:            https://github.com/githubuser/haskell-how-i-start#readme
-license:             BSD3
+-- synopsis:         Processing some csv data
+-- description:      Baseball data analysis
+homepage:            https://github.com/theodesp/haskell-how-i-start#readme
+license:             MIT
 license-file:        LICENSE
-author:              Author name here
-maintainer:          example@example.com
-copyright:           2017 Author name here
+author:              Theo Despoudis
+maintainer:          thdespou@hotmail.com
+copyright:           2017 Theo Despoudis
 category:            Web
 build-type:          Simple
 extra-source-files:  README.md
@@ -17,14 +17,20 @@ library
   hs-source-dirs:      src
   exposed-modules:     Lib
   build-depends:       base >= 4.7 && < 5
+                     , bytestring
+                     , vector
+                     , cassava
   default-language:    Haskell2010
 
 executable haskell-how-i-start-exe
   hs-source-dirs:      app
   main-is:             Main.hs
-  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N -Wall
   build-depends:       base
                      , haskell-how-i-start
+                     , bytestring
+                     , vector
+                     , cassava
   default-language:    Haskell2010
 
 test-suite haskell-how-i-start-test
@@ -33,7 +39,8 @@ test-suite haskell-how-i-start-test
   main-is:             Spec.hs
   build-depends:       base
                      , haskell-how-i-start
-  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+                     , hspec
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N -Wall
   default-language:    Haskell2010
 
 source-repository head

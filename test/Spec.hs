@@ -1,2 +1,11 @@
+module Main where
+
+import Lib
+import Test.Hspec
+
 main :: IO ()
-main = putStrLn "Test suite not yet implemented"
+main = hspec $ do
+  describe "Verify that bassbull outputs the correct data" $ do
+    it "equals zero" $ do
+      theSum <- getAtBatsSum "batting.csv"
+      theSum `shouldBe` 4858210
